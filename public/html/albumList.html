@@ -1,0 +1,13 @@
+<h1>Albums</h1>
+<form class='form-inline' ng-submit='addAlbum(album)'>
+  <div class="form-group">
+    <input type="text" ng-model='album.name' placeholder='New album' class="form-control" required>
+  </div>
+  <button class='btn btn-default'>Add</button>
+</form>
+
+<div ng-repeat='album in albums track by $index' class="albumLinks">
+  <a ui-sref="albumView({id: album._id, images: album.images})">
+    {{album.name}}
+  </a>
+</div>
